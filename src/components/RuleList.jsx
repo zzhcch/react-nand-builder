@@ -10,43 +10,46 @@ const RuleList = ({ rule }) => {
   const [pathValue, setPathValue] = useState(path);
   const [fieldValue, setFieldValue] = useState(value);
   return (
-    <Input.Group className="rule-list" compact key={id}>
-      <Input
-        onChange={({ target: { value } }) => {
-          console.log(value);
-          setPathValue(value);
-          services.handleRuleChange(id)('path')(value);
-        }}
-        placeholder="XPath"
-        style={{ maxWidth: 500 }}
-        value={pathValue}
-        allowClear
-      />
-      <Operator
-        onChange={value => services.handleRuleChange(id)('operator')(value)}
-        operator={operator}
-      />
-      <Input
-        placeholder="Value"
-        onChange={({ target: { value } }) => {
-          console.log(value);
-          setFieldValue(value);
-          services.handleRuleChange(id)('value')(value);
-        }}
-        style={{ maxWidth: 300 }}
-        value={fieldValue}
-        allowClear
-      />
+    <div className="rule-list">
+      <Input.Group compact key={id}>
+        <Input
+          onChange={({ target: { value } }) => {
+            console.log(value);
+            setPathValue(value);
+            services.handleRuleChange(id)('path')(value);
+          }}
+          placeholder="XPath"
+          style={{ maxWidth: 500 }}
+          value={pathValue}
+          allowClear
+        />
+        <Operator
+          onChange={value => services.handleRuleChange(id)('operator')(value)}
+          operator={operator}
+        />
+        <Input
+          placeholder="Value"
+          onChange={({ target: { value } }) => {
+            console.log(value);
+            setFieldValue(value);
+            services.handleRuleChange(id)('value')(value);
+          }}
+          style={{ maxWidth: 300 }}
+          value={fieldValue}
+          allowClear
+        />
 
-      <Popconfirm
-        title="Are you sure delete?"
-        onConfirm={services.handleRemoveGroup(id)}
-        okText="Yes"
-        cancelText="No"
-      >
-        <Button style={{ float: 'right' }} type="danger" icon="delete" />
-      </Popconfirm>
-    </Input.Group>
+        <Popconfirm
+          title="Are you sure delete?"
+          onConfirm={services.handleRemoveGroup(id)}
+          okText="Yes"
+          cancelText="No"
+        >
+          <Button style={{ float: 'right' }} type="danger" icon="delete" />
+        </Popconfirm>
+      </Input.Group>
+    </div>
+    
   );
 };
 

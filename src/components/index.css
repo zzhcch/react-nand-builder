@@ -9,8 +9,65 @@ button[ant-click-animating-without-extra-node]:after {
 }
 
 .rule-list {
-  background-color: cornsilk;
+  background-color: white;
   padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  position: relative;
+  margin: 10px 0;
+  border: 1px solid #eee;
 }
+
+.rules-group {
+  background: rgba(250,240,210,.5);
+  border: 1px solid #dcc896;
+  border-radius: 5px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.rules-group .ant-card-body {
+  padding-left: 60px;
+}
+
+.rules-group .ant-card-body>::before,
+.rules-group .ant-card-body>::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  width: 10px;
+  height: calc(50% + 4px);
+  border-color: #ccc;
+  border-style: solid;
+}
+
+.rules-group .rule-not>::before, .rules-group .rule-not>::after {
+  border-color:red;
+}
+
+.rules-group .rule-or>::before, .rules-group .rule-or>::after {
+  border-style: dashed;
+}
+
+.rules-group .ant-card-body>::before {
+  border-width: 0 0 2px 2px;
+  bottom: 50%;
+  height: calc(50% + 10px);
+}
+
+.rules-group .ant-card-body>::after {
+  border-width: 0 0 0 2px;
+  top: 50%;
+}
+
+.rules-group .ant-card-body>:last-child::before {
+  border-radius: 0 0 0 4px;
+}
+
+.rules-group .ant-card-body>:last-child::after {
+  display: none;
+}
+
+.rules-group .ant-card-body>:first-child::before {
+  bottom: 50%;
+  height: calc(50% + 51px);
+}
+

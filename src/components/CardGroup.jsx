@@ -7,9 +7,9 @@ import Combinator from './Combinator';
 const CardGroup = ({ id, combinator, children }) => {
   return (
     <Card
-      style={{ backgroundColor: '#666' }}
       title={<Combinator id={id} combinator={combinator} />}
       extra={<Action id={id} />}
+      className="rules-group"
     >
       {children}
     </Card>
