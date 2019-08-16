@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import Iterator from './Iterator';
 import { Context } from './store/Provider';
 
-const App = () => {
+const App = ({ callback }) => {
   const { state } = useContext(Context);
-  console.log('state: ', state);
+  useEffect(() => {
+    callback && callback(state);
+  }, [callback, state]);
   return <Iterator data={state} />;
 };
 export default App;

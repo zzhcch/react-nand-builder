@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { map, has, isEmpty } from 'ramda';
 
 import CardGroup from './CardGroup';
 import RuleList from './RuleList';
-import { Context } from './store/Provider';
 const CheckIsGroup = has('rules');
 const Iterator = ({ data, services }) => {
   const isGroup = CheckIsGroup(data);
