@@ -1,0 +1,16 @@
+@import '~antd/dist/antd.css';
+.nand {
+  margin: 10;
+}
+button[ant-click-animating-without-extra-node]:after {
+  border: 0 none;
+  opacity: 0;
+  animation: none 0 ease 0 1 normal;
+}
+
+.rule-list {
+  background-color: cornsilk;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
