@@ -5,9 +5,13 @@ import { map } from 'ramda';
 import config from './config';
 
 const Option = Select.Option;
-const Operator = ({ operator }) => {
+const Operator = ({ operator, onChange }) => {
   return (
-    <Select style={{ width: 100 }} defaultValue={operator || '=='}>
+    <Select
+      onChange={onChange}
+      style={{ width: 100 }}
+      defaultValue={operator || '=='}
+    >
       {map(
         operate => (
           <Option key={operate}>{operate}</Option>

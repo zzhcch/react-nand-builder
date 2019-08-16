@@ -13,7 +13,7 @@ const Iterator = ({ data, services }) => {
       <CardGroup id={id} combinator={combinator}>
         {isEmpty(rules)
           ? 'Please add some rules'
-          : map(rule => <Iterator data={rule} />, rules)}
+          : map(rule => <Iterator key={rule.id} data={rule} />, rules)}
       </CardGroup>
     );
   }

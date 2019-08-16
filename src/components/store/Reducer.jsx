@@ -39,6 +39,13 @@ export default (state, action) =>
         combineRoot.combinator = combinator;
         combineRoot.isNot = isNot;
         return draft;
+      case 'ruleChange':
+        const {
+          data: { target: mRuleTarget, value, type },
+        } = action.payload;
+        const mRuleRoot = findFirst(draft, 'rules', { id: mRuleTarget });
+        mRuleRoot[type] = value;
+        return draft;
       default:
         return state;
     }

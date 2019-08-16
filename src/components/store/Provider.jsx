@@ -30,12 +30,19 @@ const Provider = ({ children }) => {
       payload: { data: { target: id, value } },
     });
   };
+  const handleRuleChange = id => type => value => {
+    dispatch({
+      type: 'ruleChange',
+      payload: { data: { target: id, value, type } },
+    });
+  };
   const services = {
     handleAddGroup,
     handleAddRule,
     handleRemoveGroup,
     handleRemoveRule,
     handleCombinatorChange,
+    handleRuleChange,
   };
   return (
     <Context.Provider value={{ state, dispatch, services }}>

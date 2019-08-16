@@ -1,18 +1,42 @@
-import React, { useContext } from 'react';
-import { Input, Button, Popconfirm } from 'antd';
+import React, { useContext, useState } from 'react';
+import { Input, Button, Popconfirm, Form } from 'antd';
 
 import Operator from './Operator';
 import { Context } from './store/Provider';
 
 const RuleList = ({ rule }) => {
   const { services } = useContext(Context);
-  const { id, field, value, operator } = rule;
-  console.log('rule: ', rule);
+  const { id, path, value, operator } = rule;
+  const [pathValue, setPathValue] = useState(path);
+  const [fieldValue, setFieldValue] = useState(value);
   return (
     <Input.Group className="rule-list" compact key={id}>
-      <Input placeholder="XPath" style={{ width: 500 }} value={field} />
-      <Operator operator={operator} />
-      <Input placeholder="Value" style={{ width: 300 }} value={value} />
+      <Input
+        onChange={({ target: { value } }) => {
+          console.log(value);
+          setPathValue(value);
+          services.handleRuleChange(id)('path')(value);
+        }}
+        placeholder="XPath"
+        style={{ maxWidth: 500 }}
+        value={pathValue}
+        allowClear
+      />
+      <Operator
+        onChange={value => services.handleRuleChange(id)('operator')(value)}
+        operator={operator}
+      />
+      <Input
+        placeholder="Value"
+        onChange={({ target: { value } }) => {
+          console.log(value);
+          setFieldValue(value);
+          services.handleRuleChange(id)('value')(value);
+        }}
+        style={{ maxWidth: 300 }}
+        value={fieldValue}
+        allowClear
+      />
 
       <Popconfirm
         title="Are you sure delete?"

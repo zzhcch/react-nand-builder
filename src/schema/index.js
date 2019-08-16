@@ -6,7 +6,7 @@ const initGroup = {
 };
 const initRule = {
   id: '',
-  field: '',
+  path: '',
   value: '',
   operator: '==',
 };
