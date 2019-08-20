@@ -4,12 +4,13 @@ import { Card } from 'antd';
 import Action from './Action';
 import Combinator from './Combinator';
 
-const CardGroup = ({ id, combinator, children }) => {
+const CardGroup = ({ id, isNot, combinator, children }) => {
   return (
     <Card
-      title={<Combinator id={id} combinator={combinator} />}
+      title={<Combinator id={id} isNot={isNot} combinator={combinator} />}
       extra={<Action id={id} />}
-      className="rules-group"
+      className={`rules-group ${isNot && 'rule-not'} ${combinator === 'or' &&
+        'rule-or'}`}
     >
       {children}
     </Card>

@@ -7,9 +7,9 @@ const CheckIsGroup = has('rules');
 const Iterator = ({ data, services }) => {
   const isGroup = CheckIsGroup(data);
   if (isGroup) {
-    const { id, combinator, rules } = data;
+    const { id, combinator, rules, isNot } = data;
     return (
-      <CardGroup id={id} combinator={combinator}>
+      <CardGroup id={id} isNot={isNot} combinator={combinator}>
         {isEmpty(rules)
           ? 'Please add some rules'
           : map(rule => <Iterator key={rule.id} data={rule} />, rules)}

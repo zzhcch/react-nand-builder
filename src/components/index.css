@@ -17,7 +17,7 @@ button[ant-click-animating-without-extra-node]:after {
 }
 
 .rules-group {
-  background: rgba(250,240,210,.5);
+  background: rgba(250, 240, 210, 0.5);
   border: 1px solid #dcc896;
   border-radius: 5px;
   margin: 10px 0;
@@ -28,8 +28,8 @@ button[ant-click-animating-without-extra-node]:after {
   padding-left: 60px;
 }
 
-.rules-group .ant-card-body>::before,
-.rules-group .ant-card-body>::after {
+.rules-group .ant-card-body > ::before,
+.rules-group .ant-card-body > ::after {
   content: '';
   position: absolute;
   left: -10px;
@@ -39,35 +39,34 @@ button[ant-click-animating-without-extra-node]:after {
   border-style: solid;
 }
 
-.rules-group .rule-not>::before, .rules-group .rule-not>::after {
+.rule-not>.ant-card-body>::before, .rule-not>.ant-card-body>::after {
   border-color:red;
-}
+  }
 
-.rules-group .rule-or>::before, .rules-group .rule-or>::after {
+  .rule-or>.ant-card-body>::before,.rule-or>.ant-card-body>::after {
   border-style: dashed;
-}
+  }
 
-.rules-group .ant-card-body>::before {
+.rules-group .ant-card-body > ::before {
   border-width: 0 0 2px 2px;
   bottom: 50%;
   height: calc(50% + 10px);
 }
 
-.rules-group .ant-card-body>::after {
+.rules-group .ant-card-body > ::after {
   border-width: 0 0 0 2px;
   top: 50%;
 }
 
-.rules-group .ant-card-body>:last-child::before {
+.rules-group .ant-card-body > :last-child::before {
   border-radius: 0 0 0 4px;
 }
 
-.rules-group .ant-card-body>:last-child::after {
+.rules-group .ant-card-body > :last-child::after {
   display: none;
 }
 
-.rules-group .ant-card-body>:first-child::before {
+.rules-group .ant-card-body > :first-child::before {
   bottom: 50%;
   height: calc(50% + 51px);
 }
-

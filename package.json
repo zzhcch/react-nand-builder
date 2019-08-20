@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.21.4",
+    "dragon-face-nand": "^1.0.0",
     "immer": "^3.2.0",
     "obj-traverse": "^1.0.0",
     "ramda": "^0.26.1",

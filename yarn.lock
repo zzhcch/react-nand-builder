@@ -3470,6 +3470,11 @@ draft-js@^0.10.0, draft-js@~0.10.0:
     immutable "~3.7.4"
     object-assign "^4.1.0"
 
+dragon-face-nand@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/dragon-face-nand/-/dragon-face-nand-1.0.0.tgz#10bc4b93b7cbe50a51f12e2e25b8ae38c90a6751"
+  integrity sha512-UNKfGjkvhVUHXLNU6n5sDRnCJYOQ2Yq2ZNosmh6P3xD0c76lT19ovxZHsH9LXEfLBl4smppHh4hdR22mE794AA==
+
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"

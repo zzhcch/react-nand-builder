@@ -3,10 +3,10 @@ import { Button } from 'antd';
 
 import { Context } from './store/Provider';
 
-const Combinator = ({ id, handleCombinatorChange }) => {
+const Combinator = ({ id, isNot, handleCombinatorChange }) => {
   const { services } = useContext(Context);
   const [currentLabel, setCurrent] = useState('and');
-  const [isNotActive, setNotActive] = useState(false);
+  const [isNotActive, setNotActive] = useState(isNot);
   useEffect(() => {
     services.handleCombinatorChange(id)({
       combinator: currentLabel,
