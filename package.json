@@ -1,7 +1,6 @@
 {
   "name": "react-nand",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "antd": "^3.21.4",
     "dragon-face-nand": "^1.0.0",
